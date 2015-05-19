@@ -54,7 +54,6 @@ class Knight
           #track backward the path taken
           paths_list[destinaiton.to_s.to_sym] = (paths_list[node.to_s.to_sym] + [destinaiton])
           if to == destinaiton
-            #add end point the path taken
             answer = paths_list[destinaiton.to_s.to_sym]
             done = true
             break
