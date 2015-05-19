@@ -1,9 +1,6 @@
 class Board
   def initialize (size = 8)
     @size = size
-    @squares = Array.new (@size) { Array.new(@size, false) }
-    @total_squares = size**2
-    @visited_squares = 0
   end
 
   def in_bounds?(location)
