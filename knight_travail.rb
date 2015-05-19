@@ -35,12 +35,12 @@ class Knight
     #This tracks if we have made a particular move from the current node
     #values are stored as symbolized node + move type 
     visited = {}
-    answers = []
+    answer = []
     done = false
     #start location
     queue.push from
 
-    until queue.empty? do
+    until queue.empty? || done do
       #get first item in queue
       node = queue.shift
 
@@ -55,19 +55,19 @@ class Knight
           paths_list[destinaiton.to_s.to_sym] = (paths_list[node.to_s.to_sym] + [destinaiton])
           if to == destinaiton
             #add end point the path taken
-            answers << paths_list[destinaiton.to_s.to_sym]
+            answer = paths_list[destinaiton.to_s.to_sym]
             done = true
             break
           end
         end
       end
     end
-    answers.min { |ar1, ar2| ar1.length <=> ar2.length }
+    answer
   end
 end
 
 from = [3,3]
-to =   [0,0]
+to =   [4,3]
 
 puts "From #{from} to #{to}"
 
